@@ -1,0 +1,14 @@
+.MdAccountCircle {
+  background-color: red;
+  border-radius: 25px;
+  font-size: 30px;
+}
+
+.FiMail,
+.RiVipLine,
+.TbGenderBigender,
+.MdLocalPhone,
+.SiGooglemaps {
+  color: red;
+  font-size: 30px;
+}
