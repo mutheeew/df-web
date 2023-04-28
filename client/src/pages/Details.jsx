@@ -20,28 +20,15 @@ function Details() {
         <p>Data Tidak Ditemukan</p>
       ) : (
         <>
-          {/* <div
-            className="d-flex justify-content-center align-items-center"
-            style={{ height: "500px", backgroundColor: "#1F1F1F" }}>
-            <iframe
-              width="848px"
-              height="480px"
-              src={film.episode[0].linkfilm}
-              title={film.episode[0].title}
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen="true"></iframe>
-          </div> */}
+          
           <Container className="d-flex justify-content-center">
             <DetailsDescription
               title={film.title}
               year={film.year}
               imageUrl={film.thumbnail}
               description={film.description}
-              link={film.LinkFilm }
+              link={film.link }
               id={id}
-              // thumbnail={film.episode[0].thumbnailepisode}
-              // title_episode={film.episode[0].title_episode}
             />
           </Container>
         </>

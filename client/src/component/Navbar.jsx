@@ -122,7 +122,7 @@ function Navbars() {
               </Dropdown.Menu>
             </Dropdown>
             )}
-           {state.isLogin && state.user.role==='costumer' && (
+           {state.isLogin && state.user.role==='customer' && (
               <Dropdown>
                 <Dropdown.Toggle className="btn-dark" >
                   <img src={Profile} className="rounded-50" style={{width:"45px", height:"45px", borderRadius:"100%"}} ></img> 

@@ -5,7 +5,7 @@ import { ModalContext } from "../context/modal";
 
 export const PrivateRouteLogin = () => {
     const [userState] = useContext(UserContext);
-  
+  console.log('mute gak mandi : ', userState.user.role)
     if (!userState.isLogin) {
       return <Navigate to={'/'} />;
     }

@@ -33,12 +33,7 @@ function RegisterForm({ register, closeRegister, openLogin }) {
       const response = await API.post('/register', form);
   
       console.log("register success : ", response)
-  
-      const alert = (
-        <Alert variant="success" className="py-1">
-          Register success!
-        </Alert>
-      );
+
       setMessage(alert);
       setForm({
         email: "",
@@ -49,12 +44,7 @@ function RegisterForm({ register, closeRegister, openLogin }) {
         address: ""
       });
     } catch (error) {
-      const alert = (
-        <Alert variant="danger" className="py-1">
-          Failed to register!
-        </Alert>
-      );
-      setMessage(alert);
+      alert("Gagal")
       console.log("register failed : ", error);
     }
     closeRegister();

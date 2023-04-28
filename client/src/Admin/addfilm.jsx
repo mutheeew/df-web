@@ -30,7 +30,7 @@ const navigate = useNavigate()
         category_id : "",
         link : "",
     });
-
+    console.log(form)
     // const [episode, setEpisode] = useState({
     //     title : "",
     //     thumbnail : "",
