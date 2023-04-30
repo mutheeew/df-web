@@ -58,111 +58,150 @@ function Navbars() {
     <>
       <Navbar bg="dark" variant="dark" sticky="top">
         <Container className="d-flex align-items-center">
-          <Nav className="fw-semibold">
-            <Nav.Link>
-              <NavLink
-                to="/"
-                style={{
-                  textDecoration: "none", color:"white",
-                }}>
-                Home
+          {state.isLogin && state.user.role==='admin' &&(
+            <>
+              <NavLink to="/">
+                <img src={Logo} alt="dumbflix"/>
               </NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink
-                to="/series"
-                style={{textDecoration: "none", color:"white"}}>
-                Tv Show
+              <Nav className="gap-3">
+                <Dropdown>
+                  <Dropdown.Toggle className="btn-dark" ><img src={Profile} className="rounded-50" style={{width:"45px", height:"45px", borderRadius:"100%"}} ></img> </Dropdown.Toggle>
+                  <Dropdown.Menu className="bg-dark mt-4 ms-4">
+                    <Dropdown.Item className="d-flex align-items-center">
+                      <Link
+                        to="/addfilm"
+                        className="text-white fw-semibold text-decoration-none">
+                        <CgProfile
+                          color="red"
+                          style={{ fontSize: "20px" }}
+                          className="me-2"
+                        />Film
+                      </Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item className="d-flex align-items-center">
+                      <Link
+                        to="/transaction"
+                        className="text-white fw-semibold text-decoration-none">
+                        <CgProfile
+                          color="red"
+                          style={{ fontSize: "20px" }}
+                          className="me-2"
+                        />Transaction
+                      </Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      className="d-flex align-items-center gap-2 text-white fw-semibold"
+                      onClick={logout}>
+                      <MdLogout color="red" style={{ fontSize: "20px" }} />
+                      Logout
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Nav>
+           </>
+          )}
+          {state.isLogin && state.user.role==='customer' && (
+            <>
+              <Nav className="fw-semibold">
+                <Nav.Link>
+                  <NavLink
+                    to="/"
+                    style={{
+                      textDecoration: "none", color:"white",
+                    }}>
+                    Home
+                  </NavLink>
+                </Nav.Link>
+                <Nav.Link>
+                  <NavLink
+                    to="/series"
+                    style={{textDecoration: "none", color:"white"}}>
+                    Tv Show
+                  </NavLink>
+                </Nav.Link>
+                <Nav.Link>
+                  <NavLink
+                    to="/movies"
+                    style={{textDecoration: "none", color:"white"}}>
+                    Movies
+                  </NavLink>
+                </Nav.Link>
+              </Nav>
+              <NavLink to="/">
+                <img src={Logo} alt="dumbflix"/>
               </NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink
-                to="/movies"
-                style={{textDecoration: "none", color:"white"}}>
-                Movies
+              <Nav className="gap-3">
+                <Dropdown>
+                  <Dropdown.Toggle className="btn-dark" >
+                    <img src={Profile} className="rounded-50" style={{width:"45px", height:"45px", borderRadius:"100%"}} ></img> 
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="bg-dark mt-4 ms-4">
+                    <Dropdown.Item className="d-flex align-items-center">
+                      <Link
+                        to="/profile"
+                        className="text-white fw-semibold text-decoration-none">
+                        <CgProfile
+                          color="red"
+                          style={{ fontSize: "20px" }}
+                          className="me-2"
+                        />
+                        Profile
+                      </Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item className="d-flex align-items-center gap-2 text-white fw-semibold fs-6 pb-2 border-bottom border-white">
+                      <Link
+                        to="/payment"
+                        className="text-white fw-semibold text-decoration-none">
+                        <MdPayment
+                          color="red"
+                          style={{ fontSize: "20px" }}
+                          className="me-2"
+                        />
+                        Pay
+                      </Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      className="d-flex align-items-center gap-2 text-white fw-semibold"
+                      onClick={logout}>
+                      <MdLogout color="red" style={{ fontSize: "20px" }} />
+                      Logout
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Nav>
+            </>
+          )}
+          {!state.isLogin &&(
+            <>
+            <Nav className="fw-semibold">
+                <Nav.Link>
+                  <NavLink
+                    to="/"
+                    style={{
+                      textDecoration: "none", color:"white",
+                    }}>
+                    Home
+                  </NavLink>
+                </Nav.Link>
+                <Nav.Link>
+                  <NavLink
+                    to="/series"
+                    style={{textDecoration: "none", color:"white"}}>
+                    Tv Show
+                  </NavLink>
+                </Nav.Link>
+                <Nav.Link>
+                  <NavLink
+                    to="/movies"
+                    style={{textDecoration: "none", color:"white"}}>
+                    Movies
+                  </NavLink>
+                </Nav.Link>
+              </Nav>
+              <NavLink to="/">
+                <img src={Logo} alt="dumbflix"/>
               </NavLink>
-            </Nav.Link>
-          </Nav>
-          <NavLink to="/">
-            <img src={Logo} alt="dumbflix"/>
-          </NavLink>
-          <Nav className="gap-3">
-            {state.isLogin && state.user.role==='admin' &&(
-              <Dropdown>
-              <Dropdown.Toggle className="btn-dark" ><img src={Profile} className="rounded-50" style={{width:"45px", height:"45px", borderRadius:"100%"}} ></img> </Dropdown.Toggle>
-              <Dropdown.Menu className="bg-dark mt-4 ms-4">
-                <Dropdown.Item className="d-flex align-items-center">
-                  <Link
-                    to="/addfilm"
-                    className="text-white fw-semibold text-decoration-none">
-                    <CgProfile
-                      color="red"
-                      style={{ fontSize: "20px" }}
-                      className="me-2"
-                    />Film
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item className="d-flex align-items-center">
-                  <Link
-                    to="/transaction"
-                    className="text-white fw-semibold text-decoration-none">
-                    <CgProfile
-                      color="red"
-                      style={{ fontSize: "20px" }}
-                      className="me-2"
-                    />Transaction
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="d-flex align-items-center gap-2 text-white fw-semibold"
-                  onClick={logout}>
-                  <MdLogout color="red" style={{ fontSize: "20px" }} />
-                  Logout
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            )}
-           {state.isLogin && state.user.role==='customer' && (
-              <Dropdown>
-                <Dropdown.Toggle className="btn-dark" >
-                  <img src={Profile} className="rounded-50" style={{width:"45px", height:"45px", borderRadius:"100%"}} ></img> 
-                </Dropdown.Toggle>
-                <Dropdown.Menu className="bg-dark mt-4 ms-4">
-                  <Dropdown.Item className="d-flex align-items-center">
-                    <Link
-                      to="/profile"
-                      className="text-white fw-semibold text-decoration-none">
-                      <CgProfile
-                        color="red"
-                        style={{ fontSize: "20px" }}
-                        className="me-2"
-                      />
-                      Profile
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item className="d-flex align-items-center gap-2 text-white fw-semibold fs-6 pb-2 border-bottom border-white">
-                    <Link
-                      to="/payment"
-                      className="text-white fw-semibold text-decoration-none">
-                      <MdPayment
-                        color="red"
-                        style={{ fontSize: "20px" }}
-                        className="me-2"
-                      />
-                      Pay
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    className="d-flex align-items-center gap-2 text-white fw-semibold"
-                    onClick={logout}>
-                    <MdLogout color="red" style={{ fontSize: "20px" }} />
-                    Logout
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              )}
-              {!state.isLogin &&(
-                <>
+              <Nav className="gap-3">
                 <RegisterForm
                   register={register}
                   closeRegister={closeRegister}
@@ -188,9 +227,9 @@ function Navbars() {
                   onClick={openLogin}>
                   Login
                 </Button>
-                </>
-              )}
-          </Nav>
+              </Nav>
+            </>
+          )}
         </Container>
       </Navbar>
     </>

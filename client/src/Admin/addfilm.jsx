@@ -122,10 +122,10 @@ const navigate = useNavigate()
                     <Form.Control name="year" value={form.year} placeholder="Year" className="bg-dark text-white" onChange={handleChange}/>
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Select defaultValue="Category" name="category_id" value={form.category_id} onChange={handleChange} className="bg-dark text-white">
+                    <Form.Select name="category_id" selectedValue={form.category_id} onChange={handleChange} className="bg-dark text-white">
                     <option value="">Category</option>
                     {categories?.map((item, index) => (
-                        <option value={item?.id} >{item?.name}</option>
+                        <option selectedValue={item?.id} >{item?.name}</option>
                     ))}
                     </Form.Select>
                 </Form.Group>
