@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../detail.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-// import Profile from "../image/profile.jpg";
+import Profile from "../image/Ayana_Shahab.jpg";
 import { MdAccountCircle } from "react-icons/md";
 import { FiMail } from "react-icons/fi";
 import { RiVipLine } from "react-icons/ri";
@@ -28,9 +28,9 @@ function Profil() {
 
   return (
     <div
-      style={{ background: "black", height: "90.5vh" }}
-      className="d-flex align-items-center justify-content-center">
-      <div className="bg-dark py-5 rounded">
+      style={{ background: "black"}}
+      className="d-flex container-fluid align-items-center justify-content-center p-5">
+      <div className="bg-dark py-5 rounded" style={{ width:"50vw"}}>
         <Row className="justify-content-around">
           <Col className="col-5">
               <h4 className="mb-5 text-white">Personal Info</h4>
@@ -114,10 +114,10 @@ function Profil() {
           </Col>
           <Col className="col-5">
             <img className="img-fluid"
-              src={""}
+              src={Profile}
               alt="Profile" ></img>
             <Button
-              className="mt-3 btn-danger" style={{width:"300px"}}>
+              className="mt-3 btn-danger" style={{width:"266px"}}>
               Change Photo Profile
             </Button>
           </Col>
