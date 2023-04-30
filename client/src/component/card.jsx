@@ -46,7 +46,7 @@ const Card = ({id, title, year, imageUrl}) => {
             <p className="text-secondary">{year}</p>
             </div>
         {state.isLogin && state.user.role==='admin' &&(
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-around">
           <button onClick={() => {deleteById.mutate(id);}} className="btn btn-danger px-3" >Delete</button>
           <Link className="btn btn-danger px-3" to={`/update-film/${id}`}>Update</Link>
         </div>
