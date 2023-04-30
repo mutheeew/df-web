@@ -113,48 +113,6 @@ func (h *handlerTransaction) CreateTransaction(c echo.Context) error {
 
 }
 
-// func (h *handlerTransaction) UpdateTransaction(c echo.Context) error {
-// 	request := new(transactiondto.TransactionRequest)
-// 	if err := c.Bind(&request); err != nil {
-// 		return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()})
-// 	}
-
-// 	id, _ := strconv.Atoi(c.Param("id"))
-// 	Transaction, err := h.TransactionRepository.GetTransaction(id)
-
-// 	if err != nil {
-// 		return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()})
-// 	}
-
-// 	if err != nil {
-// 		return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()})
-// 	}
-
-// 	if request.StartDate != "" {
-// 		Transaction.StartDate = request.StartDate
-// 	}
-
-// 	if request.EndDate != "" {
-// 		Transaction.EndDate = request.EndDate
-// 	}
-// 	if request.UserID != 0 {
-// 		Transaction.UserID = request.UserID
-// 	}
-// 	if request.Attach != "" {
-// 		Transaction.Attach = request.Attach
-// 	}
-// 	if request.Status != "" {
-// 		Transaction.Status = request.Status
-// 	}
-
-// 	data, err := h.TransactionRepository.UpdateTransaction(Transaction)
-// 	if err != nil {
-// 		return c.JSON(http.StatusInternalServerError, dto.ErrorResult{Code: http.StatusInternalServerError, Message: err.Error()})
-// 	}
-
-// 	return c.JSON(http.StatusOK, dto.SuccessResult{Code: http.StatusOK, Data: data})
-// }
-
 func (h *handlerTransaction) DeleteTransaction(c echo.Context) error {
 	id, _ := strconv.Atoi(c.Param("id"))
 

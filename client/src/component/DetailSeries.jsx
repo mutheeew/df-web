@@ -31,9 +31,9 @@ function DetailDescription ({ title, year, imageUrl, description, link}) {
 
 
   return (
-    <>
+    <div className="container-fluid">
       <div className="container-fluid m-0 p-0 bg-black">
-        <ReactPlayer url={link} width="100%" height="315" />
+        <ReactPlayer url={link} width="100%" />
         {/* <iframe width="100%" height="315" src="https://www.youtube.com/embed/{link}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> */}
         {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/RH_2pLlHN8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
         <div className="d-flex justify-content-end py-3">
@@ -78,7 +78,7 @@ function DetailDescription ({ title, year, imageUrl, description, link}) {
             
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

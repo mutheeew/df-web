@@ -34,8 +34,8 @@ export default function Payment(){
                     "Content-type": "application/json",
                 },
             };
+            
             const data = {
-
                 seller_id: state.user.id,
                 price: e.price,
             };
@@ -71,26 +71,6 @@ export default function Payment(){
         }
     })
   return(
-    // <div className="d-flex align-items-center justify-content-center" style={{ background: "black", height: "100vh" }}>
-    // <div>
-    // <h1 className="text-white text-center fw-semibold fs-1 mb-4">Premium</h1>
-    //   <div>
-    //     <p  className="text-white">Bayar sekarang dan nikmati streaming film-film yang kekinian dari <span className="text-danger fw-bold">DUMBFLIX</span></p>
-    //     <p className="fw-bold text-center"><span className="text-danger fw-bold">DUMBFLIX</span> : 0981312323</p>
-    //     <form className="d-flex flex-column align-items-center justify-content-center ">
-    //       <Form.Group className="mb-3 d-flex " style={{width:"300px"}}>
-    //           <Form.Control
-    //             type="email"
-    //             placeholder="Input Your Account Number"
-    //             className="bg-dark text-white"
-    //           />
-    //       </Form.Group >
-    //       <Form.Group className="mb-3" style={{width:"300px"}}>
-    //         <Form.Control
-    //           type="file"
-    //           placeholder="Input Your Account Number"
-    //           className="bg-light text-white"/>
-    //       </Form.Group>
     <>
         <div className="bg-dark d-flex" style={{ height: "100vh" }}>
             <div className="container bg-danger bg-gradient rounded text-center py-3" style={{ width: "500px", height:"400px" }}>

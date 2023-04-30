@@ -40,30 +40,10 @@ function LoginForm({ login, closeLogin, openRegister, setValidlogin, setValidadm
       });
 
       setAuthToken(localStorage.token);
-
-      if (response.data.data.role === 'admin'){
-        // console.log("ini admin")
-        setValidadmin(true);
-        setValidlogin(true);
-        closeLogin();
-      } else {
-        // console.log("ini costumer")
-        setValidlogin(true);
-      }
-
-      const alert = (
-        <Alert variant ="succes">
-          Login Succes YAAAASSSSSHHH
-        </Alert>
-      );
-      setMessage(alert);
+      
+      alert("Login Sukses")
     } catch (error) {
-      const alert = (
-        <Alert variant="danger" className="py-1">
-          Login failed
-        </Alert>
-      );
-      setMessage(alert);
+      alert("Login Failed, Try again")
       console.log("login failed : ", error);
     }
   });

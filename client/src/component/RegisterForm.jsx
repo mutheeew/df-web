@@ -29,12 +29,11 @@ function RegisterForm({ register, closeRegister, openLogin }) {
   const handleRegister = useMutation(async (e) => {
     try {
       e.preventDefault();
-  
       const response = await API.post('/register', form);
-  
       console.log("register success : ", response)
 
-      setMessage(alert);
+      alert("Register Sukses")
+      openLogin();
       setForm({
         email: "",
         password: "",
@@ -44,8 +43,8 @@ function RegisterForm({ register, closeRegister, openLogin }) {
         address: ""
       });
     } catch (error) {
-      alert("Gagal")
       console.log("register failed : ", error);
+      alert("Register Gagal")
     }
     closeRegister();
   });

@@ -56,6 +56,7 @@ const App = () =>  {
     // Redirect Auth but just when isLoading is false
     if (!isLoading) {
       if (state.isLogin === false) {
+        alert("Login dulu bosss")
         navigate('/');
       }
     }
