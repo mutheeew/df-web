@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import Series from '../component/series';
+import Series from '../component/listseries';
 import ListMovies from '../component/listmovie';
 import {useNavigate} from 'react-router';
 import { Dropdown } from 'react-bootstrap';

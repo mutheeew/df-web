@@ -36,7 +36,6 @@ function Series() {
     return (
         <div style={{ background: "black" }}>
             <div style={{ background: "black", padding: "20px" }}>
-                <p className="fs-6 fw-semibold text-white">TV Series</p>
                 <div className="d-flex flex-wrap justify-content-start">
                    <FetchFilm/>
                 </div>
